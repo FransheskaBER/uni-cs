@@ -1,0 +1,54 @@
+"IS A" -> it's an inheritance relationship
+"KNOWS" -> association relationship
+
+Superclass -> subclasses
+
+- Subclasses inherit every attribute and method and associations from the superclass.
+
+UML notation (solid line in a hollow arrowhead pointing from subclass to superclass)
+
+Transitivity:
+NonFiction extends Book and Book extends Product (so NonFiction subclass inherits everything from Book AND Product)
+
+- A subclass can only extend ONE superclass
+
+
+single inheritance - Java supports this: NonFictionBook -> Book -> Product (each class extends ONE superclass)
+VS
+multiple inheritance - Java does NOT support this: Book -> Sellable, Book -> Printable (a class can NOT extend MULTIPLE superclasses)
+
+
+PROGRAMMING INHERITANCE:
+
+- extends keyword
+
+- subclasses inherit all PUBLIC and PROTECTED attributes/methods, and ALL associations.
+- subclasses DOESN'T inherit  PRIVATE attributes/methods (still exist in the obj but subclasses cannot directly access them)
+
+Assignment Compatability:
+- Allowed       -> Product p1 = new Book(); (every Book is a product)
+- Not Allowed   -> Book b = new Product(); (not every product is a book)
+
+
+Type VS Object Distinction:
+Product p2 = new Book();
+p2.setTitle("Java Guide"); // works because class Product has setTitle() method
+p2.setAuthor("Smith"); // ERROR (class Product doesn't have setAuthor() method)
+
+- Note: The variable TYPE (which in this example is class "Product" determines the methods you can call, even tho the actual object is a "Book")
+
+- SUPER keyword:
+    it accessess the superclass implementations
+    example:
+
+    @Override
+    public String getDescription() {
+        String baseDescription = super.getDescription(); // calls the Product's version of this method
+        return baseDescription + " by " +  author;
+    }
+
+    
+
+
+
+

@@ -1,0 +1,42 @@
+Redundancy and Error Tolerance:
+
+- when data gets corrupted during storage, it means that the hard drive failed or there was a network interference (transmission error)
+
+CHECKSUMS (detecting corruption in stored files)
+- copying the exact same file to later check for corruptions is ineficient. So checksum fix this by producing
+    a small fixed-size number for each size input.
+- a checksum is 10 digits whihc uses only 8 bytes compare to if you copy the entire file whihc can be millions of bytes
+- the tradeoff is that the checksum can tell you something is corrrupted and detect it but cannot fix it. If the, 
+    checksum doesnt match, you know sth is wrong but dont know what changed. A full duplicate could let your recover
+    the original data.
+
+PARITY BITS (a simple error for transmitted data)
+- early checking method for serial communication
+- for every 7 data bits, an 8th bit was added
+- To calculate the parity bit, you count the 1s in the binary string, and then you perform addition
+    if the total 1s in your string is 4 and add 0 -> the result is even so the parity cannot be 0
+    if you take 4 and add 1 -> the result is 5 which is odd so the parity has to be odd so you add 1.
+- however parity can still pass even thou data is corrupted if two bits flip the parity check stil can pass
+-thats why parity reliably detect only single-bit errors, thats why it is good enough in the 80s but not for
+    modern high speed networks
+
+TCP/IP ERROR HANDLING (how the internet ensure reliable delivery)
+- internet handles errors with multiuple layers of protection:
+    1. checksum - every data segment has a 16 bit checksum in the header
+    2. acknowledgements (ACK) - the receiver confirms data segment is received
+    3. sequence numbers - the data segment are numbered so missing a num can be detected
+    4. retransmission - if the checksum fails and the ack not recieved, the sender will resend the data segment again
+    5. route failover - if a network path breaks, the traffic is rerouted.
+
+- checksums answers "is this data segment corrupt?"
+- ACK asnwers "did the data segment arrive at all?"
+- Sequence Numbers answer "did segments arrive in order? Are any missing?"
+- Retransmission answers "What do we do when sth fails?"
+- Route Failover answers "What if the path itself is broken?"
+
+- this is enginerring principle of adding multiple layers of protection, each handling different failure modes.
+so a TCP/IP uses headers with 16 bits whcih can represent 65,636 combonations/values so this is the size that nerwork
+    enginner uses because is the largest number that fits in the header space
+
+- all limits are power of 2 because files sizes in headers determine maximum values
+

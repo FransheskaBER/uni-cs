@@ -1,0 +1,145 @@
+POSITIONAL NOTATION (how place value works in any base like decimal, binary, octal, hex):
+
+- with 1 binary digit, you can represetn 0 or 1 (that is the 2 values you can represent)
+- With 1 digit: 0, 1 -> 2 combinations/values
+- With 2 digits: 00, 01, 11, 10 -> 4 combinations/values
+    multiply 2 options for the new digit by two existing combinations
+    The 2 options for the new digit is taking my original combination (0 and 1) and put 0 in front of each (00, 01) and
+    put 1 in front of each (10, 11)
+- With 8 digits/bits; you do 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 which is 256 combinations/values so the values you represent
+    is from 0 to 255 which is 256 values in total, and thats why you will see 255 everywhere in computing.
+
+
+BINARY <-> DECIMAL CONVERSION (the algorithms going both directions/conversion Algorithms)
+
+- Theere are 2 directions and each has its own method:
+    1. Binary -> Decimal
+       Whenever you see a 1, you add the corresponding power of 2
+       E.g.: 01101101
+            You start from right to left:
+                1 -> (1) -> 1 * 1 = 1
+                0 -> (2) -> 0 * 2 = 0
+                1 -> (2 * 2) -> 1 * 4 = 4
+                1 -> (2 * 2 * 2) -> 1 * 8 = 8
+                0 -> (2 * 2 * 2 * 2) -> 0 * 16 = 0
+                1 -> (2 * 2 * 2 * 2 * 2) -> 1 * 32 = 32
+                0 -> (2 * 2 * 2 * 2 * 2 * 2) -> 0 * 64 = 0
+                0 -> (2 * 2 * 2 * 2 * 2 * 2 * 2) -> 0 * 128 = 0
+            To calculate the decimal, sum only the result of all 1s, so 1 + 4 + 8 + 32 = 45 decimals
+    2. Decimal -> Binary
+       You use the repeated division by 2 method.
+       45 % 2 = 22 -> 1 (22 * 2 is 44 so 45 - 44 = the remainder is 1)
+       22 % 2 = 11 -> 0 (11 * 2 is 22 so 22 - 22 = the remainder is 0)
+       11 % 2 = 5  -> 1 (5 * 2 is 10 so 11 - 10 = the remainder is 1)
+       5 % 2 = 2 ---> 1 (2 * 2 is 4, 5 - 4 = 1)
+       2 % 2 = 1 ---> 0 (1 * 2 is 2, 2 - 1 = 0)
+       1 % 2 = 0 ---> 1 (0 * 2 is 0, 1 - 0 = 1)
+       to match the original 8 bits, add remainder 0s to the end  -> 10110100
+
+
+DATA STORAGE UNITS (bits, bytes, KB, MB, GB, TB)
+
+- Bits, bytes and storage sizes
+- 8 bits = 1 byte = 256 possible values
+
+1 KB -> 1,024 bytes (which is 2¹⁰ or 10(3))
+1 MB -> 1,024KB - > 1,048,576 (which is 2²⁰)
+1 TB -> 1,024GB
+
+but storeage manufacture uses power of 10 so:
+1 KB -> 1,000 bytes
+1 MB -> 1,000,000 bytes
+
+
+
+So the difference is that the manufacturer uses 1,000 bytes but the OS uses 1,024 bytes (based units)
+
+1TB is 10(12) bytes
+if a doc size is 28KB -> 28 * 10(3)
+
+a K is = the K multiply by 10 to the power of 3
+a M is = the M multiply by 10 to the power of 6
+a G is = the G mutlipley by 10 to the power of 9
+a T is = the T multuply by 10 to the power of 12
+
+text docs are KB ranges
+photos are MB ranges
+movies are GB ranges
+hard drives are TB ranges
+
+
+OCTAL AND HEXADECIMAL (why they exist and how they relate to binary)
+
+- binary numbers get hard to read as they get longer, so shortcuts are octal (base 8) and hexadecimal (base 16)
+- 8 is 2³ and 16 is 2⁴
+
+- 1 octal digit -> is exacly 1 group of 3 binary digits
+- 1 hex digit -> is exaclty 1 group of 4 binary digits
+
+- so for example if you have 0 and 1 how many times group of 3 you can represent 8 combinatons which is a base for octal:
+000 ->  0 octal
+                convert 000 to decimal:
+                0 -> (1) -> 0 * 1 = 0
+                0 -> (2) -> 0 * 2 = 0
+                0 -> (2 * 2) -> 0 * 4 = 0
+001 -> 1 octal
+                1 -> (1) -> 1 * 1 = 1
+                0 -> (2) -> 0 * 2 = 0
+                0 -> (2 * 2) -> 0 * 4 = 0
+010 -> 2 octal
+                0 -> (1) -> 0 * 1 = 0
+                1 -> (2) -> 1 * 2 = 2
+                0 -> (2 * 2) -> 0 * 4 = 0
+011 -> 3 octal
+                1 -> (1) -> 1 * 1 = 1
+                1 -> (2) -> 1 * 2 = 2
+                0 -> (2 * 2) -> 0 * 4 = 0
+111 -> 7 octal
+                1 -> (1) -> 1 * 1 = 1
+                1 -> (2) -> 1 * 2 = 2
+                1 -> (2 * 2) -> 1 * 4 = 4
+100 -> 4 octal
+                0 -> (1) -> 0 * 1 = 0
+                0 -> (2) -> 0 * 2 = 0
+                1 -> (2 * 2) -> 1 * 4 = 4
+101 -> 5 octal
+                1 -> (1) -> 1 * 1 = 1
+                0 -> (2) -> 0 * 2 = 0
+                1 -> (2 * 2) -> 1 * 4 = 4
+110 -> 6 octal
+                0 -> (1) -> 0 * 1 = 0
+                1 -> (2) -> 1 * 2 = 2
+                1 -> (2 * 2) -> 1 * 4 = 4
+
+Whats the decimal valye of 1101:
+1 -> (1) -> 1 * 1 = 1
+0 -> (2) -> 0 * 2 = 0
+1 -> (2 * 2) -> 1 * 4 = 4
+1 -> (2 * 2 * 2) -> 1 * 8 = 8
+the decimal is 13 which is Hex D
+
+Memory the hex:
+10 - A
+11 - B
+12 - C
+13 - D
+14 - E
+15 - F
+
+
+
+Exercise convert D8 to binary: D which is 13 decimal and decimal 8
+       You use the repeated division by 2 method.
+       13/2 = 6 -> 1 
+       6/2 = 3 -> 0 
+       3/2 = 1 -> 1 
+       1/2 = 0 -> 1 
+       for 13, the binary is 1101
+       8/2 = 4 -> 0 
+       4/2 = 2 -> 0 
+       2/2 = 1 -> 0 
+       1/2 = 0 -> 1 
+       for 8, the binary is 1000
+
+So the binary of D8 is 11011000
+

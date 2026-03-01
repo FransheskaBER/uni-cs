@@ -1,0 +1,28 @@
+TEXT ENCODING (ASCII and Unicode)
+- Context determine meaning
+- ASCII and unique are agree-upon mappings saying "this number means this character"
+- Unicode uses 16 bits to represent 65,536 combinations/values
+
+
+IMAGE REPRESENTATION (pixels and RGB color values)
+- images are grids of pixels and each pixel stores color as RGB values
+- an RGB value is 8 bits and can be red, green and blue -> so each color can range from 0 to 255 (256 combinations/values)
+- using 255 for all colors woud be white
+- using 0 for all colors would be black
+- 0-255 is the intensity of the colors
+- an HD image takes about 6 million pizels and each one needs 3 bytes of color data, whihc gives you a total of 6MB
+- Imgaes take much more space than text
+- a 2000 char text doc takes 2KB VS a single image is 6MB (roughly 3000 times larger)
+
+
+AUDIO REPRESENTATION (sampling analog waves into digital values)
+- analog sound VS digital values
+- analog sound > is a continuous wave with infinite precision
+- digital audo aprroximates that wave by taking measurements at regular interval and storing that measurement as a number
+- the smaller the slices of each measurement, the more accurate the representation of your audio is (hence you need
+more dots along the wave).
+- more samples means bnetter quality
+- the range of each measurmenet stays the same for example, from 0 to 255 or 0 - 65535 depends on the bit
+- what changes is how often you measure
+- so if you measure every 5 seconds then you miss info compared as if you measure every 0.0001 seconds
+- that is the sampling rate

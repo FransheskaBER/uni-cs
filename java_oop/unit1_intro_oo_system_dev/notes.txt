@@ -1,0 +1,55 @@
+1. OBJECT ORIENTATION AS A WAY OF LOOKING AT COMPLEX SYSTEMS
+
+Instead of organizing code around functions and actions -> You want to organize code around ENTITIES and their RESPONSABILITIES. 
+Instead of thinking what actions do I need? -> You need to think "What entities exist in my system and what can each one do?"
+
+Object Orientation principles is a way of thinking about and structuring complex systems.
+
+OO views system as interacting objects so instead of thinking "What steps do i need to perform?" -> 
+You think "What ENTITIES exists in my problem domain and how do they interact?"
+
+You think about ENTITIES and not procedures/steps.
+
+OO adds the abstractions of "OBJECTS" which bundle DATA (attributes) and OPERATIONS (methods) TOGETHER.
+
+
+
+2. THE OBJECT AS A BASIC CONCEPT OF OBJECT ORIENTATION
+
+An object is a self-contained unit that contains DATA (what the object knows) and BEHAVIOR (what the object can do)
+
+DATA -> ATTRIBUTES/PROPERTIES
+BEHAVIOUR -> METHODS/FUNCTIONS
+
+Attributes store the internal state of an object. The info it holds at any given moment -> they are PRIVATE (DATA ENCAPSULATION).
+Methods define the operations an object can perform. Methods are typically PUBLIC.
+
+
+3. Phases in the Object-Oriented Development Process
+
+Core concepts before writing code:
+- WHAT the system does (requirements)
+- WHAT data it stores
+- WHO uses it and why
+
+
+    Software development proccess has 3 phases:
+        1. Object-oriented Analysis -> What should the system do?
+            Output -> Analysis model that both client/developers understand
+
+        2. Object-oriented Design -> How will we build it?
+            Ouput -> Detailed blueprint programmers can implement
+
+        3. Object-oriented Programming -> Build it
+
+
+4. Basic Principle of Object-Oriented System Development
+
+- Object oriented is a way to manage complex system by diving the system into cooperating objects, each with its own specific responsability.
+- Object oriented systems are EXTENSIBLE, MAINTAINABLE AND TESTABLE
+
+- Encapsulation -> each object has ONE specific job
+- Interfaces -> are connections - Objects cooperate thought well-defined RELATIONSHIPS
+
+ 
+

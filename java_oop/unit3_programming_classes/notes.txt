@@ -1,0 +1,40 @@
+There are 3 activities of programming:
+    1. Writing code (source code)
+    2. Compiling (compiler translated your source code into machine-executable form)
+    3. Executing (the compiled programs runs in a runtime env)
+
+
+Java is a platform INDEPENDENT:
+    You write java source code => Java compiler => bytecode (one compilation) => JVM (let's you runs the compilation in any machine like windown, linux, mac)
+
+Note: bytecode is not a machine code to any specific CPU, it is just instructions for the java virtual machine(JVM) which is a program that runs on your OS and this is the one that translate the bytecode into machine code at runtime
+
+When you compile Customer.java -> the compiler creates Customer.class which contains the bytecode
+
+
+
+Visible modifiers of classes:
+    1. Public
+    2. Private
+    3. Protected
+    5. Package-private
+
+
+METHODS IN JAVA:
+
+Private methods are callable withing the same class (internal helpers)
+
+Method signature -> method name + parameter list
+    if you have two methods with same name BUT different parameter list -> ALLOWED
+    if you have two methods with same name AND parameter list -> NOT ALLOWED
+
+
+Method overloading -> let's you have mutiple methods with the same name but different parameter lists
+
+this -> refers to the current object
+
+Method invocation -> it's when you call a method inside another method all within the same class or from another class
+
+Static methods -> belong to the class itself, can be called wihtouyt creating objects, shared across all instances
+Non-static methods -> belong to object instances, must be called on an object, and each object has its own copy
+

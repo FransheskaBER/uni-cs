@@ -1,0 +1,89 @@
+1. Structuring Problems with Classes
+
+- Classes are the blueprint/template that defines structure
+- Objects are instances of that blueprint. They have DIFFERENT data but SAME structure
+
+
+2. Identifying Classes
+
+- If a noun is just a category label or description and it doesnt have its own properties and behaviour, then it not a class.
+
+
+3. Attributes as Properties of Classes
+
+- Attributes are static elements that store data (state)
+- attributes define state - attributes are containers/data holders that hold info about the object
+- the object's state is the sum of all of it's attributes values
+
+- properties of an attribute are:
+    Name -> e.g., firstname
+    Data type -> e.g., int, String, boolean
+    Constant -> never changes like Pi = 3.1415 ("price" is not constant because it can be updated)
+    Default value -> value the attribute has if not specified
+
+- Share attributes VS specialized attributes
+    - Manufacturer, title, productNumber -> shared attributes among all types of products
+    - author -> speciliasez attribute to product Book only
+
+
+4. Methods as functions of Classes
+
+- Methods are dynamic elements that define behavior (actions)
+- Methods are => what a class can do or what can be done to a class
+- While attributes hold valued, METHODS can perform operations on those values
+
+- Methods contain LOGIC such as -> algorithms, business rules, calculations
+- Methods can:
+    - Read/get attribute values
+    - modify attribute values
+    - validate data
+    - calculate derived values
+    - create/delete objects
+    - apply business rules
+
+- Encapsulation principle -> access to attributes THROUGH methods only
+
+- Methods properties:
+    Name -> verbs (get, set, calculate, validate, etc...)
+    parameters -> input data the method needs
+    return value -> output data type
+
+
+5. Association between Classes
+
+- Wihtout associations, classes cannot interact or cooperate with each other. 
+
+- 3 types of associations:
+    has/knows -> general relationship -> A seller KNOWS their customers, a contract HAS insurance conditions, a customer KNOWS their order history
+    consist of -> composition/aggregation -> A car CONSISTS OF 4 wheels, a house CONSISTS OF rooms, an order CONSISTS OF order items
+    is a -> inheritance/specialization -> A book IS A product, a customer IS A person, a passengercar IS AN automobile
+
+- Multiplicities specify HOW MANY objects participate in a relationship
+    0..1    -> 0 or 1           -> a car MAY have 1 trailer
+    1       -> exactly 1        -> a car HAS exactly 1 driver
+    0..*    -> 0 or more        -> a student can take 0 or more courses
+    1..*    -> 1 or more        -> a teacher must teach at least 1 course
+    3..4    -> specific range   -> a car HAS 3-4 doors
+
+Contract [1..*] ----billing address----> [1] Address -> a contract must have 1 address WHEREAS an address can be used by 1 or more contracts
+
+WITH ARROW: contract --> address  means contract KNOWS address and can navigate from contract to address but not otherwise
+    - This matter because in this case, address is an attribute of contract, meaning that you can get an address from a contract but you cannot
+        find all contracts from an address. this is ONE-WAY relationship
+
+
+WIHTOUT ARROW: general relationship, no specific navigability
+
+
+
+6. Unified Modeling Language (UML)
+
+- A UML is every class diagram i have drawn with its attributes, methods, class names, association lines
+- UML is an standard notation for your diagrams -> captures design decisions in a precise and visual format
+
+- 2 categories for UML diagrams:
+    Structural -> models WHAT the system consist of. Static structure, class diagram, object diagram, component diagram, package diagram, deployment diagram
+    Behavioral -> models WHAT HAPPENS in the system. dynamic behaviour, use case diagram, activity diagram, sequence diagram, state machine, communication diagram, timing diagram
+
+
+

@@ -1,0 +1,65 @@
+Specification -> what methods sth must have like a contract
+vs
+implementation -> the actual code that fulfill that contract
+
+Why is it important to separate specification from implementation?
+    Because separating them, we can have better flexibility and reusability.
+    We can swap implementations easily
+    We can use same implementation to different use cases
+
+Unlike inheritance in each one sub-class needs to inherit from a superclass to apply polymorphism for example, 
+    interfaces allows to classes that are not inherit to share commong specifications based on the CONTRACT.
+    as long as both classes are inside that contract, good to go.
+
+- An interface is a method signature that can be shared by many classes wihtout one extending the another (wihtout inheritance)
+    Example of an interface:
+
+    public interface ICustomerStorage {
+        public void create(Customer k);
+        public Customer load(int customerNr);
+        public void update(Customer k);
+        public void cancel(int customerNr);
+    }
+
+- Interface rules:
+    use keyword "interface" 
+    methods inside interface have signatures only, NOT BODY
+    no instance attributes allowed, only constants with static final
+    interfaces names start with I
+
+- How to implement an interface?
+
+    public class DBCustomerStorage implements ICustomerStorage {
+        public void create(Customer k) {......};
+        public Customer load(int customerNr) {......};
+        public void update(Customer k) {......};
+        public void cancel(int customerNr) {......};
+    }
+
+    classes can implement multiple interfaces like:
+    public class MyClass implements InterfaceA, InterfaceB, InterfaceC {...}
+
+- If you want to use basically the method directly to any class object, you can use polymorphism wihtout inheritance liek:
+
+    private ICustomerStorage customerStorage = new DBCustomerStorage(); // here you are using the interface as the variable type and the actual object type database storage and then you can:)
+    customerStorage.update(k1); // you can call any methods inside the interface
+
+    You can do the same by just swaping the type of storage class:
+    private ICustomerStorage customerStorage = new FileCustomerStorage();
+    customerStorage.update(k1); // the method in the interface doesnt know if talking to a database or a file
+
+- Interfaces can inherit from other interfaces
+    example:
+
+    public interface InterfaceA extends InterfaceB, InterfaceC {....} // it works like regular inheritance
+    // Note: that a class implementing InterfaceA MUST implement all methods included in the 3 interfaces.
+
+
+
+- Before Java 8 (2014), methods inside an interface were abstract only with no body implementation, but afterwards, 
+    it is allow to have body implementation in the body that can of course be override by the class,
+
+- UML annotation
+--- open head - class USE interface
+--- closed head - class IMPLEMENT interface
+

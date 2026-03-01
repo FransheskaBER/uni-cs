@@ -1,0 +1,96 @@
+ABSTRACT CLASSES AND ABSTRACT METHODS
+- Abtract classes solves a design problem in whichi it is use for organization and code reuse, and shold NEVER be instantiated.
+- Abtrastac classes:
+    Define common behavior for sub-classes
+    Serve as a type for Polymorphism
+    Enforce structure in your class hierarchy
+
+- Abstract methods FORCES sub-classes to implement the actual behaviour. but the method doesnt have any method implementation.
+
+- For example, in the context of an online shop where you have many different kinds of products.
+    If you want to prevent developers from creating "generic" products instead of a specific kind (like games, music, etc.)
+    you can create an absrtact class for Product, like that creating a genertic product like below wont be possible:
+        Product p = new Product("generic", "unknown", "123); // COMPILE ERROR!! which is good because you want:
+        Product p = new Book(...);
+
+- How yo create an abstratct class Product: 
+    public abstract class Product {
+        private String title;
+        private String manufacturer;
+
+        public Product(String title, String manufacturer) {
+            this.title = title;
+            this.manufacturer = manufacturer;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public abstract String getTwitterDescription(); // Abstratc method without implementaiton - force all sub-classes to implement it with the actual behavior
+
+    }
+
+
+POLYMORPHISM
+- It means MANY FORMS
+- It means that a superclass can hold instances of any subclass and call the correct method implementation for each subclass at once.
+- for for example you can create a List of Product classes, and call the method getDescription of every product.
+    so the Product class will hold an instance of each product and call the getDescription method for each sub-cproduct
+    games, film, music, etc..
+
+- Difference between compile time and runtime:
+    example: Product p = new Book(...);
+    p.getDescription();
+
+    -> The compiler sees that "p" is declared as Product, will check that Product has getDescription() as abstract method and if so, will generate bytecode to call that method.
+    -> The runtime looks at the actual object "p" stored and see it's a Book, search for the override getDescription() and its own behavior in Book class and executes Book's implementation.
+
+- Product -> DECLARED TYPE (info needed for the compiler)
+- Book    -> ACTUAL TYPE (info neede by the JVM at runtime)
+
+- The compiler needs to know that the method exists in the declared type to allow the call,
+    and the JVM needs to find the method implementation in the actual type to execute it.
+
+
+STATIC ATTRIBUTES AND METHODS
+- static attributes belong to the class only and they are shared across all instances but belongs to the class.
+- static methods belongs to the class only and they are called by using the className.methodName();
+
+- static methods can NOT access instances' variables or methods.
+
+- Use cases can be something constant like a variabe Math.PI which is already the same
+
+- Static attributes/methods exist INDEPENDENTELY  of any object hence they cannot access instances attributes/methods.
+
+
+Use static attributes for:
+    - constants shared acrosss all instances
+    - configuration values (database connection limids, API endpoints)
+    - counters (how many instances have been created)
+
+Use static methods for:
+    - utility functions that dont need an object state
+    - helper functions like validation, formatting, conversions
+
+
+- DO NOT USE STATIC for data that varies for each INSTANCE and for methods that need access to isntance's state
+
+- NOTE: STATIC METHODS CANNOT ACCESSS INSTANCE variables/members
+for example:
+public class Product {
+    private String title;
+
+    public static String formatTitle() {
+        return this.title; // COMPILE ERROR -> Static methods cannot access the instance's variable "title"
+    }
+    // if you want to access instance's variable then use static attrobiutes because static method scan access static variables
+}
+
+- to decide if a method or attribute shold be static or now, you need to ask:
+    Does the method/attribute need object-specific state?
+
+
+
+
+

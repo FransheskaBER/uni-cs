@@ -1,0 +1,101 @@
+DATA, INFO, MESSAGES
+
+- Computers represent all types of info such as images, text, music, documents as BINARY (1s and 0s).
+
+Data VS Information:
+- Data are raw symbols with no meaning like 010011110101.
+- Information is data arranged with context and rules to create meaning.
+
+
+Why binary? because early computer can only swithc between ON (1) and OFF (0).
+
+1 bit = 1 binary digit (1 or 0);
+8 bits = 1 byte which can be 256 posible combinations
+
+How many unique values can N bit represent?
+    -> 1 bit = 2 values (0, and 1)
+    -> 2 bits = 4 values (00, 01, 11, 10)
+    -> 3 bits = 8 values (000, 001, 010, 100, 011, 101, 111, 110)
+    -> so N bits -> you multiply N times 2 -> values so if bits 3 then values is 2 * 2 * 2 = 8 values
+        if bits are 5 then values are 2 * 2 * 2 * 2 * 2 = 32 values
+
+    
+
+ASCII -> Stans for AMERICAN STANDARD CODE for INFORMATION INTERCHANGE
+    This allows computers to translates human-readable text into binary storage
+    so uppercase "A" is 01000001 whereas lowercase "a" is 01100001
+
+Pixels is for storing images > images are divided into small squares (pixels) and each square has one color:
+    there are 8-bit color:
+        first 3 bits are red
+        second 3 bits are green
+        third 2 bits are blue
+    total 256 posible colors
+
+    so for example if we have a binary code like 11111100 -> means: max red + max green + no blue = bright yellow
+
+Data Messaging:
+    When you send a photo over the internet, the photo is is binary data, the TO/FROM addresses are also added as binary data
+    and everythign the photo and the addresses are sent as BINARY STREAMS (of 1s and 0s).
+    Now, the computer that receives that message will strip the addressing information and display the photo.
+
+
+HARDWARE, FIRMWARE, SOFTWARE
+
+Hardware are physical component you can physically touch.
+    Components:
+    -> CPU is the brain that does all the calculations and sends instructions
+    -> Motherboard is like the nervous system that connects all components so they can communicate
+    -> RAM is like your desk a temporary place where you can work and store things, so it is a fast and short-term working memory
+    -> Hard Drive is like the library which is slow, long-term permanent storage.
+
+    Note: RAM is volatile meaning it needs electricity to hold data. Hard Drive is non-volatile meaning, doesnt data persists without power.
+
+Firmware is software (binary instructions) baked into a hardware chip. It is stored in the BIOS chip, also known as ROM.
+    BIO(Basic Input Ouput sytem) - ROM (Read Only Memory)
+    Properties:
+    -> Non-volatile
+    -> it is read-only
+    -> static always does the same thing
+
+    When you turn on the computer, press the power button, your RAM is empty and the CPU doesnt have any instructions, 
+        then, CPU will look at the BIOs chip (firmware) for instructions, the BIOs chip will indentify all connected
+        hardware in your computer like RAM size, hard drives, graphics cards, etc. Then the BIOs will locate the
+        OS the operating system(or system sOFTWARE) on the hard drive and copies it into your RAM, and then your OP operating systerm will
+        load and then you can use your computer.
+
+Software is binary instructions store on writable long-term storage (hard drive).
+    OS (operating system) -> stored in a writable hard drive -> is Windows, macOs, Linux
+        This is the first software that is loaded into the RAM after boot(after turning on computer)
+        This provides 3 things: UI, hardware control, ability to run apps.
+        This is require for a standard computer to function
+    
+    Apps
+        These are loaded into RAM when opened and removed when closed
+        These must be built for a specific OS because they rely on that OS's specific instructions
+
+Why dont we store everything in the hard drive and why we need RAM?
+    The reason is SPEED
+
+
+LANGUAGES, SYNTAX, SEMANTICS
+
+- Programming languages are the bridge between human intent and binary machine instructions
+- Syntax is the structure of your code, like the grammar, rules. So one missing character/symbol, crashes.
+- Semantics are the meaning - what you code does what you indended it to do.
+- The different is the wrong syntax - program doesnt run. whereas wrong semantics, programs still runs but incorrectly.
+
+HISTORICAL OVERVIEW OF COMPUTERS
+1. Behemoths (40s - 60s)
+    built with vaccums in large rooms, input is switches dials and ouput lights
+2. Business(60s - 80s)
+    medium/large business. Output was teletype monocrome dumb terminals
+    input/poutput was keyboards
+3. Graphical (80s, 2000s)
+    apple introduce GUI + mouse
+    input/poutput was mouse/GUI
+    GUI (point and click interfaces) 
+4. Portable (2000s - today)
+    true portability, laptoos, tablets, smartphones, etc.
+    note that smartphones is still a computer - has RAM, CPU, and long-term storage (hard-drive)
+

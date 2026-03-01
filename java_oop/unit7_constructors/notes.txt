@@ -1,0 +1,69 @@
+STANDARD CONSTRUCTOR:
+
+- It's a special method that runs automatically when you create a new object/instance of the class with the keyword "new"
+    The constructor initialize the object's state by setting up intial values to the attributes/variable needed in the class.
+
+- Standar constructor is the simples constructor that takes NO PARAMETERS:
+    
+    public class Customer {
+        private ShoppingCart cart;
+        private double minimumOrderValue;
+
+        public Customer() {
+            // initialize attributes
+            cart = new ShoppingCart();
+            minimumOrderValue = 10.0;
+        }
+    }
+
+- If you dont create a defaul contructor, Java will give you an implicit empty constructor.
+
+
+OVERLOADING CONSTRUCTORS:
+
+- Define multiple constructors with different parameter lists
+- different parameter lists means:
+    different number of parameters OR same number but different data types (you can not have two parameters that are strings BOTH - you need one can be a boolean for example)
+
+- You can use this() to call the standard constructor or any other constructor - so this prevent you from Repeating youself
+    note that this() must be the first statemenet in the constructor
+
+
+- You can copy constructors by passing the class name in the parameters with a specific variable name like:
+    public Customer(Customer original) {...}
+
+- shallow copy is problematic so dont do:
+    this.shoppingCart = original.shoppingCart;
+    
+    instead do:
+    this.shoppingCart = new ShoppingCart(original.shoppingCart);
+
+
+CONSTRUCTORS AND INHERITANCE
+-When you create sub-classes of the superclass, you need to initialize the attributes of the superclass first, and then the subclass.
+    to avoid repeating yourself, you can use the keyword super() which calls the parent constructor.
+
+    example:
+
+    public class Customer() {
+        private String firstname;
+        private String lastname;
+
+        public Customer(String fname, String lname) {
+            firstname = fname;
+            lastname = lname;
+        }
+    }
+
+    public class PremiumCustomer extends Customer {
+        private double bonus;
+
+        public PremiumCustomer(String fname, String lnam) {
+            super(firstname, lastname);
+            this.bonus = 10.0;
+        }
+    }
+
+- CANNOT USE this() and super() in the same constructor
+- super() MUST BE FIRST in lin in the constructor
+- this() is for calling a constructor in the SAME class and super() is for calling a constuctor of a parent class.

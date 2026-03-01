@@ -1,0 +1,63 @@
+TYPICAL SCENARIOS OF EXCEPTION HANDLING
+
+- Errors should have their own channel, they shouldn't travel int the same channgel as the return value.
+- Errors should be rich in data hence they should be OBJECTS carrying more information about what went wrong and why
+- Errors should enforce callers to handle the error and not silentely ignore them.
+
+STANDARD EXCEPTIONS IN JAVA
+
+- Blocks:
+    try -> run this risky code
+    catch -> If this specific exception occurs handle it here
+
+- Keywords:
+    finally -> always run this, not matter what (It's the cleanup block)
+    throws -> warning in the method signature - this method may throw this exception
+    throw -> I am throwing this exception right now
+
+- throwS vs throw:
+    Throws is a declaration
+    throw  is an action
+
+Throws is part of the method signature like:
+    public double getPricePerProduct() throws ArithmeticException {
+        return ...
+    }
+
+Throw is when you create and throw the exception yourself like:
+    throw new ArithmeticException("Shopping cart is empty");
+
+
+- Throws in the method signature puts the responsability to handle the error on the caller
+
+- "EXCEPTION" is the parent class of all exceptions.
+
+CHECKED vs UNCKECED
+- Unchecked:
+    Means the compiler WILL NOT FORCE YOU to handle the errors. You can use throws in the method signature WITHOUT try/catch and the compiler wont complain.
+    Example of unchecked errors:
+        RuntimeException class has these are sub-classes:
+            ArithmeticException
+            NullPointerException
+            ArrayIndexOutOfBoundsException
+
+- Checked:
+    everything that is not runtimeException - the compiler FORCES YOU to either catch them or declare throws in your own method signature.
+
+
+- For programming errors (bugs) and when recovery IS NOT meaningul use -> Unchecked exceptions
+- For recoverable solutions that the caller can handle use -> Check exceptions
+
+
+DEFINING YOUR OWN EXCEPCTIONS
+
+- A custom exception is just a class that extends Exception.
+    Exception has a constructor that acceots one string which is the message itself, if you forget to add that parameter, 
+    exception will call getMessage() and it will be null.
+
+- If you extend Exception then your custom exception becomes checked, but if you extend RuntimeException, your custom exception will become unchecked.
+
+
+- USE:
+    Extend Exception (checked) -> for business rule violations, things like minimum order value is negative, insufficient stock, account frozen, etc..
+    Extend RuntimeException (unchecked) -> for programming errors that indicate a bug, things like null being passed.

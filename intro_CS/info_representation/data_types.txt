@@ -1,0 +1,18 @@
+VARIABLES (name, type, memory location)
+- A variable is like a box that holds 3 different propertties: name, type, and location memory/address
+
+NUMERIC DATA TYPES (why different sizes exist for byte, int, float, double)
+byte -> 8 bits
+int -> 32 bits
+float -> 32 bits
+double -> 64 bits
+- memory saving matters wehn you have millions of values
+- Java's splits the 256 values of the data type "bytes" into negative and positive (-128 to 127)
+
+
+NON-NUMERICA DATA TYPES (char, boolean, string, array)
+- The type determines the behavior so '4' + '2' is not the same as "4" + "2" is not the same as 4 + 2
+- char stores unicode values
+- string is a sequence of chars
+- boolean stores true/false (1 bit)
+- arrays are ordered collections

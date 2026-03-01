@@ -1,0 +1,105 @@
+- Primitive Data Types
+    Java has 2 different ways to store data:
+        1. primitive types > store actual values in memory
+        2. refernce types > store the reference of objects in memory
+
+Primitives types:
+1. Integers:
+    byte, short (both rarely used)
+    int
+    long (large numbers)
+2. floating-point (decimals)
+    float (7-decimal digits precision)
+    double (15-decimal digits precision)
+3. others:
+    boolean
+    char (single Unicode character)
+
+
+- Storring PRIMITIVEs are FASTER and use LESS MEMORY than objects' references.
+    for example:
+    int count = 100; -> uses 4 bytes
+    Integer countObject = 100; -> uses 16 bytes
+
+
+- Java treats all decimals as DOUBLE by default, so if you want to use float you need to add the "f" suffix in the end of the value like 19.99f
+
+- VARIABLES are different from ATTRIBUTES
+    variables exists only within methods
+    Attributes are instance variables within the class - whereas - Variables are local variables within the methods\
+    
+    variables -> for temporary calculations in methods
+    attributes -> object's permanent state
+
+    Variables HAVE TO BE initialise inside the method
+    Attributes get default values automatically wihtout initialization
+
+    Variables are destroy automatically after using the method - so it frees memory automatically
+
+OPERATORS AND EXPRESSIONS
+
+    Operators -> they transform values
+        1. Arithmetic (+, -, *, /, %, ++)
+        2. Logical (!a, &&, ||, ^ - exaclty one true)
+        3. Relational (==, !=, <, >, >=, <=)
+        4. String concatenation
+    
+    - With primitives, the == operator compares VALUES
+    - with objects, the == operator compares REFERENCES
+    - with objects, use .equals() if you want to compare VALUES
+
+    // WRONG
+    if (username == "admin") {  // Compares references, not content
+        grantAccess();
+    }
+
+    // CORRECT
+    if (username.equals("admin")) {  // Compares content
+        grantAccess();
+    }
+
+
+CONTROL STRUCTURES:
+1. Branch -> execute different code based on conditions
+2. Loop -> execute same code mutlitple times
+
+Loops:
+    While loop -> pre-checked -> Test condition before EACH iteration > every iteration you need a change of the original variable
+    Do-White loop -> post-checked -> execute body FIRST, then test condition, and always runs at least once.
+    for loop -> counter-controlled -> best for known iteration counts and keeps loop control logic in one place.
+
+Choosing the right loop:
+    For known iterations, use for
+    For unknown iterations and condition based, use while
+    For must execute at least once, use do-while
+    For iterating collections, use for-each
+
+- Nested loops multiply iterations so if you have a for-loop for 10 items, a nested loop that will loop for 10 items as well will mutiply
+    the numbers of loops so the loop will iterate 10x10 = 100 times.
+
+- Infinite loops:
+    int i = 0;
+    while (i < 10) {
+        System.out.println(i);
+        // FORGOT: i++;  → infinite loop
+    }
+
+
+
+PACKAGES AND VISIBILITY MODIFIERS:
+
+- packages (folders) group related classes files
+- package declaration -> package onlineshop.processing; (processing is a sub-folder within the folder onlineshop - onlineshop/processing/Order.java)
+- the name of the class online is included in the package declaration to aboi name collisions. Foe example, two Customer classes can coexist if they'
+    are different packages like:
+    onlineshop.user.Customer
+    onlineshop.processing.Order
+    library.user.Customer
+
+- visibility modifiers:
+    public -> everywhere
+    protected -> same package + subclasses
+    private -> same class only
+    default -> same package only
+
+
