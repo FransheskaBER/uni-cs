@@ -1,0 +1,95 @@
+WHAT IS AN ALGORITHM?
+- it is a set of rules/instructions for completing a task
+- Algorithms involve tradeoff between speed and optimality
+
+FLOWCHARTS
+- visual representation of algorithms using standard symbols
+- translates logic into visual form using standard symbols:
+    1. Oval -> terminator for start and end points
+    2. Rectangle -> process for actions, calculations and assignments
+    3. Diamond -> decision for yes/no branching
+    4. Parallelogram -> input and output for data entering or leaving the system
+    5. Arrows -> flow direction
+- tracing flowcharts is following the logic step by step, tracking variable values thro each decision.
+
+STACKS
+- LIFO, push/pop operations, sequential access only
+- When an error occurs is called a stack trace because when a function A calls a function B which
+calls a function C, the return addresses are push onto the stack. When C finishsed, pop back to B, 
+then B pops back to A. 
+- to access a #500 item in a list of 1000 items, you will need to pop the first 500 items and 
+you will lose those items unless you store them somewhere temporarily and thats a O(n) access time.
+However with an array, you can get instant access via index with a O(1) access time.
+- fast for accessing most recent/added items
+
+LINKED LISTS
+- sequential with points, insertions in the middle and unbounded.
+- each element or NODE contains two things: Data and the Pointer to the next node.
+- When you want to insert an element in the middle, you just replace the two points, the first pointer
+to point to the new element and the pointer of the new element to point to the next element. 
+So insertion is O(1) with linked lists is very fast, however with array insertions are O(n)
+because when you want to insert an element in the middle, the rest need to shift their indexes one to
+the right. For accesss, linkedin is slow O(n) whereas arrays are fast O(1).
+- fast insertion and deletion
+
+ARRAYS
+- random access via index, bounded size is fixed.
+- fast access
+
+SEARCHING ALGORITHMS
+- There are linear search, jump search and binary search
+    1. Linear O(n): start at the beginning, search each element until you find the target.
+    2. Jump O(√n): Jump ahead by N positions, then do linear until you find the target.
+    3. Binary O(log n): Split data in half repeatedly until you find the targed (requires sorted data).
+- when searching a 2500 elements, in the worst case scenerario, the linear searches 2500 pages, 
+the jump searches 100 pages (jumping every 50 pages) and the binary searches 12 pages (having
+2500 until reaching 1).
+- Linear search is better for small size data structures and when data is not sorted. 
+- Jump and Binary, both, require sorted data whereas linear can work in sorte/unsorted data.
+- So if the data is not sorted, you either needs to sorted first which taskes O(n log n) time,
+to use binary or jump search, or simply use linear search O(n).
+
+SORTING ALGORITHMS
+- There are bubble sort, binary insertion sort and quicksort
+    1. Bubble O(n²): the formula to know how many comparisons to sort all elements is n*(n - 1)/2
+        in which n is the size of the array, so if the array is size 10, the comparisons 
+        would be 10*9/2 whihc is 45 comparisons.
+        As N growsth, the amount of comparisons quadruple hence Bubble sort is inefficient
+        with large datasets.
+        Bubble does lots of comparisons and swaps
+
+    2. Quicksort O(n log n):
+        Pick a pivot, then split data into two sections (larger than pivot and less than pivot)
+            and then sort each section separately.
+        Quicksort uses similar halving (like binary search)
+        Tends to win on overage because partitioning is efficient
+
+    3. Binary Insertion O(n²):
+        This is insertion sorting and it uses binary search on the already-sorted part.
+        The steps are keep a sorted output portion, take the next element from input, 
+        find the correct insertion position in the sorted part by halving(binary search) and
+        insert it there.
+        This approach reduces comparisons but inserting can shift elements which still can be slow.
+        Reduces comparisons but still may do lots of moves and shifts
+        Useuful for small lists of when comparisons are expensive
+
+QUALITY OF ALGORITHMS
+
+- Traveling Salesman Problem(TSP):
+    - Factorial growths faster than exponential.
+    - Factorail growths makes brute force impossible for large problems.
+
+- Algorithm quality criteria:
+    1. Accuracy: Some algorithms must be 100% correct like sorting while others can be "good enough"
+        like TSP.
+    2. Correcteness: The algorithm must be mathematical valid.
+    3. Termination: The algorithm must know when to stop.
+
+- Big O notation:
+    - Constant O(1) -> Array access by index
+    - Linear O(n) -> Linear search
+    - O(n log n) -> quicksort
+    - Quadratic O(n²) -> bubble sort
+    - Cubic O(n³)
+    - Exponential O(nᵏ)
+    Note: the (log n) means how many half you need to reach 1 starting at n
