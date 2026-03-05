@@ -1,0 +1,30 @@
+CONJUNCTIVE NORMAL FORM (CNF) - ANDs of ORs
+- It is a conjunction of disjunctions 
+- AND connects groups of ORs: (p ∨ ¬q) ∧ (r ∨ s)
+- The example above has two groups of disjunctions (ORs) - (p ∨ ¬q) and (r ∨ s) and they are
+    connected by AND ∧
+- In java, the example above will look like: (p || !q) && (r || s)
+- more examples:
+    (a ∨ b) ∧ (c ∨ d) - CNF
+    (a ∧ b) ∨ (c ∧ d) - NO CNF
+    (a ∨ b ∨ c) ∧ (d) - CNF (single literal also qualifies as trivial disjunction)
+    a ∧ b ∧ c         - CNF (single literals connected by ANDs)
+
+DISJUNCTIVE NORMAL FORM (DNF) - ORs of ANDs
+- This is the opositve of disjunction of conjunctions meaning:
+- OR connects groups of ANDs: (p ∧ q) ∨ (¬r ∧ ¬s)
+- In java: (p && q) || (!r && !s)
+- more examples:
+    (a ∧ b) ∨ (c ∧ d) - DNF
+    (a ∨ b) ∧ (c ∨ d) - NO DNF
+    a ∨ b ∨ c         - DNF (single literals connected by ORs)
+    (a ∧ b ∧ c) ∨ d   - DNF
+
+
+SATISFIABILITY (does at least one input combination make the the formula true?)
+- A formula is satisfiable if at least one combination of inputs makes it true.
+- For example: the formula p ∨ ¬p is always true hence it is satisfiable
+    build a trueh table:
+    p || NOTp
+    T || F -> T
+    F || T -> T

@@ -1,0 +1,41 @@
+MEMORY HIERARCHY (why we need multiple levels of storage)
+
+LEVEL     / SIZE  / SPEED       / DISTANCE FROM CPU
+hard disk / 1TB   / slowest     / farthesr
+RAM       / 32GB  / fast        / close
+L3 cache  / 2MB   / faster      / on CPU
+L2 cache  / 256KB / even faster / on CPU
+L1 cache  / 32KB  / fastest     / closest to CPU core
+
+- As you get closert to the cpu, the storage gets smaller but faster.
+- cache is tiny and not 1TB because largest cache requires travelling longer distance, hence slower.
+- speed means that it needs to be closer to the cpu
+- fast memory is expensive
+- faster memory generates more heat so a massive L1 cache ca overheat the CPU
+- the use of small amounts of fast memory for the most critical data, and larger amounts of
+    cheaper slow memory for everything else.
+- larger size of cache drain battery faster
+
+
+
+CACHE LEVELS
+- L1 > 32KB > smallest memory but fastest and closest to CPU
+- L2 > 256KB > medium memory size and speed
+- L3 > 2MB > largest cache but slowest (but still faster than RAM)
+- When the CPU needs data, it checks in this order:
+    L1 — if found, great! (called a "cache hit")
+    L2 — if not in L1, check here
+    L3 — if not in L2, check here
+    RAM — if not in any cache, fetch from RAM (called a "cache miss")
+
+
+
+
+
+HOW DATA FLOWS (from hard disk -> RAM -> cache -> CPU)
+- When you open an app:
+    App sits on hard disk (permanent storage)
+    When you open it, it copies to RAM (working memory)
+    CPU copies current instructions/data to L3 cache
+    Most critical data moves to L2, then L1
+    CPU processes from L1 (fastest access)

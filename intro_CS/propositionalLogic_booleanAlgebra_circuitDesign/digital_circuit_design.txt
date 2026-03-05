@@ -1,0 +1,33 @@
+NOTE: Logic gates ARE propositional logic implemented in electronics
+
+LOGIC GATES (AND, OR, NOT, NAND, NOR, XOR, XNOR)
+- Output is 1 when:
+    both inputs are 1 (AND)
+    at least one input is 1 (OR)
+    input is 0 (NOT)
+    Not both are 1 meaning at least one is 0 -> NAND ¬(A ∧ B)
+    both inputs are 0 -> NOR ¬(A ∨ B)
+    inputs are different -> XOR A ⊕ B
+    inputs are the same -> XNOR ¬(A ⊕ B)
+
+READING CIRCUITS (translating circuit diagrams to logical formulas)
+- Circuit ¬(A ∧ B) ∨ (C ∧ D) has:
+    A and B go into a NAND gate (which is NOT-AND, so ¬(A ∧ B))
+    C and D go into an AND gate (C ∧ D)
+    Both results go into an OR gate
+
+EVALUATING CIRCUITS (tracing inputs through gates to get outputs)
+- Exercise: Using the first circuit ¬(A ∧ B) ∨ (C ∧ D), calculate the output for these inputs:
+A = 0, B = 1, C = 1, D = 1
+Walk through each gate:
+
+A ∧ B = ?
+¬(A ∧ B) = ?
+C ∧ D = ?
+Final OR: ¬(A ∧ B) ∨ (C ∧ D) = ?
+
+0 ∧ 1 = 0
+¬(0 ∧ 1) = 1
+1 ∧ 1 = 1
+Final OR: ¬(0 ∧ 1) ∨ (1 ∧ 1) = 1
+
