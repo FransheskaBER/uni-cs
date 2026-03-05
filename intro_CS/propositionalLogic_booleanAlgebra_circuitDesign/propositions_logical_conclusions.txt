@@ -1,0 +1,31 @@
+PROPOSITIONS AND LOGICAL CONCLUSIONS
+
+STATEMENTS AND PROPOSITIONS (claims that can be true or false)
+- A statement is a statements that claims that sth is or not is 
+- A poposition is the underlying idea that can be evaluated as true or false
+- A proposition must be objective and not ambiguious
+
+LOGICAL CONNECTIVES (AND (∧), OR (∨), NOT (¬), Implication (⇒))
+- Conjunction && - both are true
+- Disjunction || - at least one is true
+- Negation ! - original is false
+- Implication -> if p is true, q must be true
+
+- In implications if you have an statement like "if A then B",
+    If A is true and A is true -> contract fullfill hence TRUE
+    If A is true and B is false -> contract broken hence FALSE
+    If A is false and B is true -> contract says nothing about this, so no violation hence TRUE
+    If A is false and B is false -> contract says nothing about this, so no violation hence TRUE
+
+TRUTH TABLES (systematic evaluation of all combinations)
+- Fill in the table:
+    p  q  ¬p  ¬p ∧ q
+
+    T  T   F      F 
+
+    T  F   F      F  
+
+    F  T   T      T
+
+    F  F   T      F
+ 

@@ -1,0 +1,53 @@
+VON NEUMANN ARCHITECTURE (overall design - CPU, memory, input/output)
+- input --> CPU (central processing unit) --> output
+- CPU <--> Memory
+- Intructions and data are BOTH stored in MEMORY
+- Bits like Os and 1s are stored in the CPU as two groups, data and instructions, and the context
+    is what tells the CPU if the group is a command or data.
+- When you have a bit like 01000001, how does the CPU knows if its data or instructions?
+    CPU will look where is the bit in its execution cycle and which register point to
+    that memory location.
+    If PC (program counter) points to address 1000, the CPU treats it as INSTRUCTION
+    if MAR (memory address register) points to address 1000 during data fetch, the CPU treats it
+    as data.
+- The context comes from how the CPU is using that memory location at that moment.
+
+
+
+
+CPU COMPONENTS (ALU, control unit, registers)
+1. ALU (arithmetic and logic unit): It does the actual computation (addition, subtraction, AND,
+    OR, XOR, etc..) all the logic gates exist here.
+2. Control Unit: Orchaestrate everything:
+    fetch instructions, decode them, coordinate the ALU and memory access.
+3. Registers: it is a tiny storage in the CPU. There are 5 von neumann registers:
+    - PC (program counter): this is the address of next intruction to fetch
+    - MAR (memory address register): this is the current address being accessed
+    - MDR (memory data register): data being read from or written to memory
+    - AC (accumulator): holds results or data that is being processed
+    - CIR (current instruction register): this is the current instruction that is being executed
+
+
+
+DATA BUSES (how components communicate)
+1. Address Bus: This bus sends the memory address (one-way: CPU --> Memory)
+2. Data Bus: This bus sends and receives data (two-way: CPU <--> Memory)
+3. Control Bus: This bus sends commands and status signals (two-way)
+- The von neumann bottleneck is if the CPU needs to fetch the data for the current instruction and
+    also needs to fetch the next intruction from memory at the same time. So it has to do one thing,
+    before starting the other which takes too long.
+    Therefore, modern CPUs use various tricks to reduce this bottleneck like:
+    - cache memory (fast memory close to CPU that stores recently used data/instructions)
+    - separate instructions and data caches (called Harvard architecture modification)
+    - prefetching (guessing what you will need next and loading it early)
+
+
+
+
+MEMORY ADDRESSING (how the CPU finds data in memory)
+- Each byte of memory has a unique binary address
+- the number of bits in the address determine how much memory can be accessed
+    16-bit -> 64KB
+    32-bit -> 4GB
+    64-bit -> theoretical max
+

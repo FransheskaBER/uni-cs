@@ -1,0 +1,52 @@
+INPUT AND OUTPUT DEVICES (what they are and how they convert signals)
+- input (keyboard, mouse, camera)
+- output (monitor, printer, speaker)
+
+- Input devices convert human actions or external data into binary:
+    - Keyboard: keystrokes --> electrical signals --> binary codes
+    - Mouse: movement --> electrical signals --> binary coordinates
+    - Camera/Microphone: light/sound --> pixels/audio samples --> binary
+    - Network card: recevices binary data from other computers
+
+- Output devices convert binary back into sth humans can perceived
+    - Monitor: binary pixel data --> light on screen
+    - Printer: binary document --> ink on paper
+    - Speaker: digital audio -> analog sound waves
+    - Network card: sends binary data to other computers
+
+
+SYSTEM BUS (how devices communicate with CPU)
+- The 3 busses (control, adress, data) connects everything:
+    CPU <--> [control bus/ address bus/ data bus] <--> Memory <--> Input/Output
+- The size of the data in the input needs to fit and match the word size before sending it.
+    when data is smaller than the word size, then the input just fills it in with 0s
+    to match the size and this is called padding control by the I/O processing before
+    data reaches CPU
+
+
+
+CHANNEL CODES AND DEVICE COMMUNICATION (how CPU identifies and controls devices)
+- Each device is assigned a channel code which is like an address for the device
+    so when the CPU receives this code, it knows which device is communicating.
+- The control bus carries info like Ready, Busy, Error, Request (device needs attention)
+
+Example: 
+
+    What happends when you press a key on your keyboard. The keyboard needs to tell the CPU
+    "HEY, i have data for you" - using the 3 bussess, this is the info each bus carries and 
+    might travel on each bus when keyboard sends the letter "A" to the cpu:
+    
+        - Control bus: Carries the "interrupt" or REQUEST signal telling the CPU "keyboard
+            has input ready"
+        - Address bus: Carries either the keyboard's channel code (so CPU knows which
+            device is talking) OR a memory address where the data should be stored
+        - Data bus: Carries the actual data — the binary value 65 (the letter 'A')
+
+    - The full sequence might look like:
+    You press 'A'
+    Keyboard sends interrupt signal via control bus
+    CPU acknowledges and asks "what do you have?"
+    Keyboard sends its channel code so CPU knows who's talking
+    Keyboard sends the value 65 via data bus
+    CPU stores it in memory at an address sent via address bus
+    Eventually your application reads that value and displays 'A' on screen
