@@ -1,0 +1,29 @@
+OPERATING SYSTEM FUNCTIONS (OS) - it's the interface, hardware control and running apps
+- The operating system has 3 main functions:
+    1. provides an interface, let's humans interact with the computer
+    2. controls the hardware, manages the CPU, memory and devices
+    3. runs apps, loads and executes programs
+- The OS is the middleware, wihout it you need to send binary commands directly to the CPU
+- The flow is: User ---> OS ---> CPU ---> Hardware
+
+
+USER INTERFACES - CLI vs GUI, evolution of input methods
+- CLI is a command line interface, which is text only. This is the terminal/CLI, in which
+    user types commands and see text output.
+- GUI is a graphical user interface, This is what most user interact with like the window, 
+    mouse pointer, icons, for example the react frontend is a GUI.
+- Newer interfaces, like voice, touch, facil recognition so think about smartphones, siri/alexa, 
+    face ID.
+
+
+DEVICE DRIVERS - how the OS talks to hardware
+OS <-> Device Driver(software) <-> Device Controller(hardware UI) <-> Device(network/video card, printer)
+- When device signals to CPU with "I need attention" send the IRQ which is the Interrupt Request.
+- The modern ssystem config IRQ automatically (plug and play)
+- Manufactures release updates to fix bugs and that is the driver updates
+
+- Complete communication chain: Device → Device Controller → Device Driver → OS → CPU
+- Device drivers are the software bridge between the OS and hardware, 
+- Device controllers handle signal translation to binary
+- IRQ signals are used for getting CPU attention. 
+- Flow: from sensors/actuators → device controllers → device drivers → OS → CPU. 
