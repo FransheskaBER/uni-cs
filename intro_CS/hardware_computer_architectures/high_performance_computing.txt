@@ -1,0 +1,37 @@
+- High-performance computing is necesary because some problems are too big for a single computer.
+- Whe you run your app on single servers you run the risk that when getting millions of requests, 
+    the RAM might get overflown which will start to swap to disk (hard drive) which is a massive
+    slowdown, the CPU might also get overload and wont be able to process all request fast enought,
+    and there might be a potential crash in which the system runs out of resources entirly.
+    That is why companies like Amazon do not run on a single server.
+
+PARALLEL PROCESSING:
+- even if you add masive RAM, the system will spend to much time managing all of that memory
+    which eventyually would be useless and that's why you cannot have built on one giant computer.
+- So parallel processing means that instead of using a massive CPU, use many CPUs working togehter.
+- The best way is to break the task into sub-tasks, assign each to a different processor.
+- However, there are some sub-taks that cannot run in parallel because if sub-task A depends on
+    sub-task B, then these tasks have to be run SEQUENTIALLY.
+
+
+SERVER CLUSTERS:
+- Cluster 1 (frontend) -> Multiple identical servers serving the UI
+- Cluster 2 (backend) -> Multiple identical servers serving the database
+- Key Concepts:
+    1. load balancing means that the system will distribute incoming requests across servers, 
+        so user A mights hit server 1 and user B might hit server 2.
+    2. fault tolerance means that if one server crushes, the others keep running so users never notice.
+    3. geo distribution means that all servers are placed worldwide.So users connect to the nearest
+        one for faster response.
+
+- when you update your code, and render needs to update the server, it happens in a roll-up and 
+    not at the same time, so it is a rolling deployment. so for example, serve 1 gets updated, 
+    while server 2-5 handles the traffic, once server 1 is updated, now it moves to server 2, 
+    and so on..
+
+
+SUPERCOMPUTERS:
+- these combine massive parallelism
+- FLOPS means floating point operations per seconds
+
+    
