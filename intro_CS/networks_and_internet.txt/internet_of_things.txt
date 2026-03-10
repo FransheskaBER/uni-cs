@@ -18,3 +18,23 @@ it so it crashes making the device unusable.
 - DDoS defenses: rate limiting (block IPs to send many requests), CDN/DDoS protection services
     like cloudflare, IP blocking (identify attacking IPs and block them at the network level
     before requests reach your server).
+
+
+FUTURE:
+IoT programming constraints:
+Constraint Quizzly (Web App) Smart Thermostat (IoT)
+Memory      32GB RAM on server      Maybe 256KB or less
+Storage     Terabytes in database   A few megabytes
+Processing  Powerful multi-core CPU Tiny microcontroller
+Power       Always plugged in       Battery or low-power
+Network     Fast, always connected  Intermittent, slow, expensive
+Updates     Deploy anytime          Harder to update remotely
+
+What this means for programming:
+
+No room for waste: In Quizzly, you can use libraries freely. In IoT, every byte matters. You might write in C instead of JavaScript to save memory.
+Offline-first: Your thermostat must work even if WiFi dies. It can't just show "connection error" — people need heat.
+Battery awareness: Sending data constantly drains the battery. IoT devices often batch data and send once per hour, or only when something changes.
+Reliability: If Quizzly crashes, users refresh the page. If a medical monitor crashes, someone could die. IoT code must be extremely robust.
+
+IoT still involves software — the code running on the thermostat is software. The difference is that software runs on very constrained hardware, so you must think about hardware limits constantly. In web development, you rarely worry about running out of RAM.
