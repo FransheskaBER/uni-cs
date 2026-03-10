@@ -34,7 +34,7 @@ BINARY <-> DECIMAL CONVERSION (the algorithms going both directions/conversion A
        5 % 2 = 2 ---> 1 (2 * 2 is 4, 5 - 4 = 1)
        2 % 2 = 1 ---> 0 (1 * 2 is 2, 2 - 1 = 0)
        1 % 2 = 0 ---> 1 (0 * 2 is 0, 1 - 0 = 1)
-       to match the original 8 bits, add remainder 0s to the end  -> 10110100
+       to match the original 8 bits, add remainder 0s to the front  -> 00101101
 
 
 DATA STORAGE UNITS (bits, bytes, KB, MB, GB, TB)
@@ -143,3 +143,12 @@ Exercise convert D8 to binary: D which is 13 decimal and decimal 8
 
 So the binary of D8 is 11011000
 
+
+
+       54 % 2 = 27 -> 0 (27 * 2 is 54 so 54 - 54 = the remainder is 0)
+       27 % 2 = 13 -> 1 (13 * 2 is 26 so 27 - 26 = the remainder is 1)
+       13 % 2 = 6  -> 1 (6 * 2 is 12 so 13 - 12 = the remainder is 1)
+       6 % 2 = 3 ---> 0 (3 * 2 is 6, 6 - 6 = 0)
+       3 % 2 = 1 ---> 1 (1 * 2 is 2, 3 - 2 = 1)
+       1 % 2 = 0 ---> 1 (0 * 2 is 0, 1 - 0 = 1)
+       to match the original 8 bits, add remainder 0s to the end  -> 00110110

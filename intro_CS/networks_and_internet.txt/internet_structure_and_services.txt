@@ -1,0 +1,67 @@
+INTERNET STRUCTURE (ISPs, backbone, undersea cables)
+- The internet is LANs connected to a backbone via routers.
+- The internet service provider (ISP) is the company you pay to connect your LAN to the backbone
+- Backbone handles high-speed connections between major routes
+
+
+CLIENT VS SERVER (roles on the network)
+- client is a device using the services (laptop, browser, phone)
+- server is a machine priving services (web servers, database server, api servers)
+- So for example in quizzly, my backend is the server to the frontend. However, my backend
+    becomes a client when it need to call/request services it depends on (like when sending the
+    claude API to get the LLM response and when sending a reques to Neon PostgreSQL to get data).
+
+
+DHCP (automatic UP configuration)
+- Dynamic Host Configuration Protocol - this protocol automatically configure my network's settings
+    so the IP address, the subnet mask, the default gateway and the DNS server addresses.
+- NOTE:
+
+MAC Address (Hardware Address):
+
+Permanently assigned to your network card by the manufacturer
+Never changes
+Used at Layer 2 (Data Link)
+Example: A4:83:E7:2F:9B:01
+This IS unique to your laptop forever
+
+IP Address:
+
+Assigned by the network you connect to
+Changes depending on which network you're on
+Used at Layer 3 (Network)
+Example: 192.168.1.47
+This is NOT permanent
+
+So:
+
+At home, your laptop might have IP 192.168.1.10
+At the coffee shop, your laptop gets IP 10.0.0.87
+At university, your laptop gets IP 172.16.5.203
+
+The DHCP process:
+
+Your laptop connects to WiFi (using MAC address)
+Laptop broadcasts: "I need an IP address!" (sent to everyone on local network)
+DHCP server hears the broadcast and responds: "Here, use 10.0.0.87"
+Now your laptop has an IP address and can communicate
+
+- Clients find servers -> servers need stable addressses
+- Servers respond to clients -> clients can have any address
+
+
+DNS (tranlating domains names into IP addresses)
+- Domain Name System -> it translate IP addresses into human-readable message and viceversa.
+- cached = problem
+- if you change the IP address of quizzly, if a user's chache still pointing to old IP, 
+    user will get an error.
+
+URL structure (understanding web addresses)
+URL: https://www.iu-fernstudium.de/studienplatz-sichern/index.htm
+- Protocol: https://
+- computer name: www
+- domain name: iu-fernstudium.de
+- hostname: www.iu-fernstudium.de
+- path: /studienplatz-sichern/
+- filename: index.html (filenames have a suffix extension .html/.jpg/.pdf)
+
