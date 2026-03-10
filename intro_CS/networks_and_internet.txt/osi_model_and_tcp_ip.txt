@@ -1,0 +1,56 @@
+OSI MODEL (7 layers explaining network communication)
+- this model has 7 layers
+- the top layer is the closest to the user
+- the bottom layer is the closest to the hardware
+    7. Application -> Interface for apps to request network access
+    6. Presentation -> Encoding and Encryption (handles encryption so https data gets encrypted here before travelling)
+    5. Session -> Stablish a connection between the setting, the port and the timing
+    4. Transport -> Breaks data into segments, error checking and flow control
+    3. Network -> IP addressing and routes packets to destination (router reads IP address and decide the path)
+    2. Data Link -> Harware address, the ethernet, collision detection
+    1. Physical -> cables, signals, hubs, switches - the actual hardware
+
+TCP/IP MODEL (4 layers - simplified and practical version)
+- This model simplifies OSI in 4 layers:
+    4. Application (appplication + presentation + session)
+    3. Transport 
+    2. Internet (network)
+    1. Network access (data link + physical)
+- This is the model that the INTERNET actually uses. OSI is the theoretical model but this is
+    the practical implementation.
+- TCP (transmition control protocol) is the layer 4 which means Transport
+- IP (internet protocol) is the layer 3 which is the network/internet
+
+
+
+TCP/IP CONFIGURATION (IP address and subnet mask and default gateway)
+- IP address is the unique identifier for the device and it has two parts:
+    A. Network ID: which network 
+    B. Host ID: which device on that network
+- Subnet Mask tells the computer which part of the IP address is the network ID and whihc on is the
+    host ID.
+- Gateway is the router that connects my local network LAN to the outside world WAN. So, if my
+    computer want to talk to another computer on its own network, gateway is not needed, only
+    if my computer wants to talk to another computer that is outside of my local network, 
+    then it will need a gateway.
+
+
+
+
+PACKET DELIVERY AND FAULT TOLERANCE (how data actually travels)
+- When you want to sent a picture of a cat to your grandmother, this is what happends:
+    1. Data is formatted (presentation layer)
+    2. Session is stablished (session layer)
+    3. Data is broken into packets and each is added a sequence of numbers (transport layer)
+    4. Each packet gets an address (network layer - so each packets get from your IP to grannmon's IP)
+    5. Packets are sent to gateway (your router)
+    6. Routers pass the packets along (each router decides the next hop toward destination)
+    7. Packets arrrive (possibly out of order or via different routes)
+    8. Reassembled into original data (picture) (transport layer)
+- So the fault tolerance means when a router fails, the TCP/IP automatically find another router.
+- The TCP on the sender side, keeps a copy of each packet until the receiver confirms that has
+    received all packets.
+
+- TCP handles reliable delivery (segments, sequence numbers , ACKs system)
+- IP handles addressing and routing
+

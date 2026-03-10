@@ -1,0 +1,20 @@
+DEVICES BEYOND TRADITIONAL COMPUTERS THAT CONNECT TO THE INTERNET
+
+WHAT IS IOT (internet of things) (types of connected devices and their uses)
+- devices that connect to the internet that are not computers/phones
+- examples: self-drive cars, smart refrigerators/tvs/speakers/mirrors, etc.
+- key capabilities:
+    - remote control
+    - data collection
+    - data retrieval
+    - device-to-device communication
+    - voice control
+
+IOT SECURITY RISKS (vulnerabilities and attacks)
+- default password that each devices gets with the manufacturer's default details
+- device takeover 
+- DDoS attack and botnet is when the hacker sends millions of commands and the server cannot handle
+it so it crashes making the device unusable.
+- DDoS defenses: rate limiting (block IPs to send many requests), CDN/DDoS protection services
+    like cloudflare, IP blocking (identify attacking IPs and block them at the network level
+    before requests reach your server).

@@ -1,0 +1,44 @@
+LAN VS WAN (local area network vs wide are network)
+- LAN -> computers in one physical location
+- WAN -> LANs connected over large distances like between Madrid and London
+- INTERNET -> the largest WAN (millions of LANs connected worldwide)
+
+
+NETWORK DEVICES (hubs, switches, routers)
+- hub doesnt have intelligence. It receives the signal and send it out to all port with no filter.
+- switch has basic intelligence. It reads the hardware addressses, filters the broadcast traffic 
+    and prevent broadcast storms.
+- routers has the most intelligence. It reads the IP addresses and sends the packets only to the
+    right destinations.
+
+- Wire networks consider to be safer than wireless, because wifi the signal is broadcasted
+    through the air and anyone within reach can access it (like hub that broadcast to all ports) 
+    so thats why wifi encryption like WPA2 or WPA3 is critical for security reasons.
+
+
+NETWORK TOPOLOGIES:
+Topology  Structure                 Fault Tolerant?               Used Today?
+Ring      Computers in a circle,    No— one break kills network   Rarely
+            signal passes around
+Mesh      Every computer connected  Yes— multiple paths exist     Wireless mesh networks
+            to every other
+Star      All computers connect     Partial— central node is      Most common
+            to central hub/switch   single point of failure  
+Bus       All computers on one      No— one break kills network   Rarely
+            shared cable
+
+
+WIRED VS WIRELESS TRADEOFF
+Aspect              Wired                       Wireless
+Mobility            Limited by cable            Free movement within range
+Troubleshooting     Easier (follow the cable)   Harder (invisible signals)
+Speed               Fastest                     Medium (catching up)
+Security            Much more secure            Easy to intercept signal
+Setup cost          Must buy/run cables         Just need access point
+
+WIRELESS STANDARDS
+g -> 2.4
+n -> 2.4 and 5
+ac -> 2.4 and 5
+ad -> 6
+be -> 1 - 6
