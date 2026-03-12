@@ -1,0 +1,39 @@
+The essential points are:
+
+- Applications perform specific user tasks; operating systems manage the computer.
+- Apps vary greatly in size depending on their functionality and assets.
+- Large apps are split into files and only needed parts are loaded into RAM.
+- Apps usually depend on a specific operating system because of OS-specific APIs.
+- Software can be freeware, adware, off-the-shelf, subscription-based, or malicious.
+- Modern apps often separate client-side parts from backend/cloud functionality.
+- App development is ongoing and includes design, coding, alpha, beta, release, testing,
+and maintenance.
+- Modern software engineering uses approaches like Agile, SCRUM, DevOps, and DevSecOps.
+
+Summary:
+- An application is software designed to perform a specific task for the user, while an
+operating system manages hardware and provides the environment in which applications run.
+
+- Applications come in different sizes depending on their complexity and included resources,
+such as code, images, audio, and video. Large applications are typically divided into
+multiple files, and only the needed parts are loaded into memory RAM when required.
+
+- Applications are usually written for a specific operating system because each OS uses
+its own APIs. Therefore, software often needs separate versions for Windows, macOS,
+Android, or iOS.
+
+- Applications may be distributed under different models, including freeware, open source,
+hadware, off-the-shelf, and subscription-based software. Some software is harmful and is
+known as malware, including viruses and Trojan horses.
+
+- Modern applications are often divided into a smaller client-side part running on the
+user’s device and a backend part running in the cloud. This improves security, maintenance,
+and support across devices, but also raises data protection concerns.
+
+- The development of applications is a long process involving design, coding, testing,
+alpha and beta versions, release, and ongoing maintenance. Modern software engineering
+practices include Agile, SCRUM, DevOps, and DevSecOps.
+
+
+
+

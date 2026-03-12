@@ -1,0 +1,34 @@
+Application Software --> Programs that do specific tasks.
+Information Systems  --> Larger systems that use software, hardware, data, and people to manage info inside an organisation.
+
+NOTE: not every application software is an information system. But information systems use software
+as part of the whole setup.
+
+Task-focused programs ---> Application Software
+
+- Information system is a complete system used to collect, process, managae, and present info
+to support work and decision-making in an organization.
+So if a company has:
+    -> employee data
+    -> payroll software
+    -> managers reading reports
+    -> computers running software
+    -> rules about who does what
+... that whole thing is the information system.
+
+DATA VS INFORMATION
+- Data ---> raw facts
+            e.g. raw number on daily sale
+- Information ---> proceesed and organized data that is meaningful like a chart showing
+                   e.g. chart shows that sales dropped 20% this month
+
+
+TYPES OF INFORMATION SYSTEMS:
+
+TPS -> transaction processing systems (handles repetitive/structured tasks, day-to-day OS)
+MIS -> managment information systems (helps management monitor and organise business by
+taking that raw business activity from TPS and helps management use it)
+DSS -> decision support systems (it's the decision-making support through analysis about the future)
+EIS -> executive information systems (the big pic system/ it is more strategic, executive-level overview system)
+
+OLAP -> online analytical processing (high-performance analytical approach to analyse large amounts ofdata)
