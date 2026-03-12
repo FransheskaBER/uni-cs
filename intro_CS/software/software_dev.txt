@@ -1,0 +1,36 @@
+If I strip it down to the essentials:
+
+- Software development follows a life cycle, not just coding.
+- The main SDLC stages are requirements analysis, planning, design, development,
+testing, and deployment/maintenance.
+- A requirements document describes what the software must do.
+- A design document describes how the software will be structured.
+- Waterfall is linear and rigid.
+- Spiral is iterative and uses repeated cycles and prototypes.
+- Big Bang involves very little planning and is fast but risky.
+- Maintenance continues after release and often restarts the cycle.
+
+Summary:
+
+- The Software Development Life Cycle (SDLC) is the process used to develop software over its full
+life, from initial idea through release and maintenance.
+
+- The main phases of the SDLC are:
+1. analyse requirements
+2. planning
+3. design
+4. development
+5. testing
+6. deployment and maintenance
+
+- In the requirements phase, the team identifies the problem the software should solve and
+produces a requirements document. In planning, feasibility, risks, team roles, and budgets
+are considered. In design, the software structure is planned and documented. In development,
+the code is written. In testing, QA identifies bugs and developers fix them. In deployment
+and maintenance, the software is released and updated as needed.
+
+- There are different models for implementing the SDLC. The Waterfall model is a linear,
+rigid model in which each phase is completed before moving to the next. The Spiral model
+is iterative and includes repeated cycles of planning, design, development, and testing,
+often using prototypes. The Big Bang model uses very little planning and allows coding,
+design, testing, and requirements work to happen simultaneously, making it fast but risky.

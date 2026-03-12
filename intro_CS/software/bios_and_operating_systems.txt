@@ -1,0 +1,99 @@
+BIOS:
+
+- A computer has two parts:
+    1. Hardware which is the CPU, RAM, keyboard, disk, screen
+    2. Software which are the instructions that tell the computer what to do.
+- When you turn on the computer, the computer needs a starting point because it doesnt know
+how to start, where is windows or macOs and what to load first. That starting point that the 
+computer needs when you turn it on is called BIOS.
+- BIOS stands for Basic Input Output System
+- BIOS is a set of startup instructions stored on a chip on the motherboard. It is not the full
+operating system (OS). It's more like the computer's starter mechanism.
+- BIOS starts the machine, checks that all the important parts exists and then hands over the
+control over to the operating system.
+- When you turn on the computer, the computer is wired to find and read the instructions inside
+the BIOS chip. Once it's found, the BIOS runs POST (Power-On Self-Test) which it checks that
+all the essential hardware is present and working such as the CPU, RAM, and the storage device.
+If sth is critically wrong, the boot will fail.
+- The BIOS then will need to find the OS on storage after checking that all essential hardware exists and works.
+- Once, the BIOS finds the OS, the OS will take control, it will load on memory into RAM and 
+start taking control during the time the computer is on.
+- OS is the one that makes the computer useful because it is the one that runs applications, 
+read and write files, show graphics, is in charge of the interface to response properly to the user.
+
+
+OS:
+- Provides the UI, controls hardware in a broader way, runs applications, manages files and memory, 
+and coordinates the whole system after startup.
+
+
+WHY BIOS IS CALLED FIRMWARE?
+- BIOS is not an ordinary software, it is actually a firmware. Because it is built into the 
+device and stored on special memory on the motherboard. It is more permanent than software, 
+and it is meant to always be there when the machine starts.
+- Software -> are installed programs
+- Firmware -> built-in low-level instructions inside hardware
+
+
+INPUT AND OUTPUT PATH - This is an important part because it shows how software reaches hardware
+- The general path is:
+Application --> OS --> Drivers --> BIOS --> Hardware
+
+e.g when you click "play" on a song:
+    - App requests sound output
+    - OS handles that request
+    - Drivers translate the request for the sound device
+    - BIOS helps provide a hardware-level access
+    - Hardware produces sound
+
+NOTE: apps do not control hardware directly on their own. There are layers after apps and before hardware.
+
+
+WHAT DRIVERS DO?
+- A driver is a software that helps the OS communicate with the hardware device.
+- The OS and the hardware do not speak the same language. The driver is the translator.
+- There are drivers like graphic driver, printer driver, audio driver, etc...
+
+
+WHAT AN API IS IN THIS CONTEXT?
+- Applications use APIs to request hardware-related actions.
+- APIs is a way for one piece of software to ask another piece of software to do something.
+- Apps do not communicate directly to the hardware. They make requests to the OS using APIs.
+
+
+BIOS CONFIGURATION SCREEN AND CMOS:
+- Users can change the system settings like date/time, boot order, hardware settings, and passwords.
+- Older computers use CMOS to store the BIOS settings and CMOS needed a battery.
+- Modern computer use flash memory for settings and CMOS battery for running the clock. That is why
+when CMOS baterry die, the date/time is reset everytime you start the PC.
+
+
+MAIN FUNCTIONS OF THE OS:
+1. Provide UI: give users a way to interact with computers like desktop/windows/menus/command line/etc.
+2. Control hardware: OS manages how software controls hardware. Examples: screen output, keyboard
+    input, storage access, printer access.
+3. Run applications: OS loads and manages programs. Without OS, apps are just files sitting on a disk.
+
+
+FILE SYSTEMS:
+- A method OS uses to organise and store data on the storage device.
+- Wihtout a file system method, the disk is just a raw storage space.
+
+
+FAT, FAT16, FAT32
+- Older systems use FAT = file allocation table (keeps track of where file data is stored on the disk)
+- FAT16 uses 16-bit addressing and supports 65,000ish clusters
+- FAT32 uses 32-bit addressing and supports more cluster and it was created because disks got bigger.
+
+
+FRAGMENTATION:
+- FAT stores file data in the next available free space, so parts of the same file can end up
+in different places on the disk and this is called fragmentation.
+
+
+MODERN PRIMARY FILE SYSTEMS
+- windows 10 --> NTFS
+- macOs 10.13 --> APFS
+- Linux --> ext4
+NOTE: every OS has its own prefered file system method. How each OS format a drive is also depend
+on their own preferences and that is why there is incompatability.
